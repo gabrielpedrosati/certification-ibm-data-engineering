@@ -16,19 +16,20 @@
 13. Data Engineering Capstone Project
 
 ## Skills
-- Relational Database Management Systems (RDBMS)
-- ETL & Data Pipelines
-- NoSQL and Big Data
-- Hadoop
-- Kafka
-- Apache Spark
-- Linux
-- Shell Scripts
-- SQL
-- Data Science
-- NoSQL
-- Python Programming
-- Data Analysis
-- Pandas
-- Numpy
-- Web Scraping
+> Relational Database Management Systems (RDBMS) -
+> ETL & Data Pipelines -
+> NoSQL and Big Data -
+> Hadoop -
+> Kafka -
+> Apache Spark -
+> Linux -
+> Shell Scripts -
+> SQL -
+> Data Science -
+> NoSQL -
+> Python Programming -
+> Data Analysis -
+> Pandas -
+> Numpy -
+> Web Scraping -
+> Data Modeling
