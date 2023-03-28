@@ -7,7 +7,7 @@ In this project we will minimize data redundancy and inconsistency in a database
 
 ### **First Normal Form (1NF)**
 We will be working with the Bookshop table. The following image shows the Bookshop table:
-!["Bookshop Table"](introduction-to-relational-databases/imgs/bookshop_table.png)
+!["Bookshop Table"](../imgs/bookshop_table.png)
 
 - Does the above table have unique rows? 
 > Yes, it does.
