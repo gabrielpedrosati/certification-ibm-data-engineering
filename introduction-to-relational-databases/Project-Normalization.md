@@ -17,13 +17,13 @@ We will be working with the Bookshop table. The following image shows the Booksh
 > To normalize this table, add an extra row, and split the multiple author names as well as multiple author IDs of the row containing multi-valued data into their own row.
 
 The multi valued attribute after applying the 1st NF should look like this:
-!["1FN"](/imgs/1FN.png)
+!["1FN"](./imgs/1FN.png)
 
 ### **Second Normal Form (2NF)**
 By definition, a relation is in second form if it is already in 1NF and does not contain any partial dependencies. If you look at the BookShop table, you will find every column in the table is single or atomic valued, but it has multiple books by the same author.
 As the number of rows in the table increase, you will be needlessly storing more and more occurences of these same pieces of information. And if the author updates their bio, you must update all of these occurences.
 
-!["Bookshop Table 1FN"](/imgs/2FN.png)
+!["Bookshop Table 1FN"](./imgs/2FN.png)
 
 So, we need to take the author information (AUTHOR_ID, AUTHOR_NAME, AUTHOR_BIO) out of the Bookshop table into another table, for example a table named BookShop_AuthorDetails. We then link each book in the BookShop table to the relevant row in the BookShop_AuthorDetails, using a unique common column such as AUTHOR_ID to link the tables.
 
@@ -34,7 +34,7 @@ CREATE TABLE BookShop_AuthorDetails
 AS (SELECT DISTINCT AUTHOR_ID, AUTHOR_NAME, AUTHOR_BIO FROM BookShop);
 ```
 
-!["BookShop_AuthorDetails"](/imgs/bookshop_authordetails.png)
+!["BookShop_AuthorDetails"](./imgs/bookshop_authordetails.png)
 
 Now we can drop, the redundant author information related columns from the BookShop table.
 ```
@@ -42,7 +42,7 @@ ALTER TABLE BookShop
 DROP COLUMN AUTHOR_BIO,
 DROP COLUMN AUTHOR_NAME;
 ```
-!["BookShop_DropColumn"](/imgs/bookshop_dropcolumn.png)
+!["BookShop_DropColumn"](./imgs/bookshop_dropcolumn.png)
 
 Now we are only storing the author information once per author and only have to update it in one place; reducing redundancy and increasing consistency of data. Thus 2NF is ensured.
 
@@ -59,8 +59,8 @@ ADD PRIMARY KEY (BOOK_ID);
 ALTER TABLE BookShop_AuthorDetails
 ADD PRIMARY KEY (AUTHOR_ID);
 ``` 
-!["Book_PK"](/imgs/bookshop_pk.png)
-!["Author_PK"](/imgs/author_pk.png)
+!["Book_PK"](./imgs/bookshop_pk.png)
+!["Author_PK"](./imgs/author_pk.png)
 
 ### Foreign Key
 A foreign key is a column that establishes a relationship between two tables.
@@ -79,7 +79,7 @@ ON DELETE NO ACTION;
 
 Let's check our DDL:
 
-![FK](/imgs/fk.png)
+![FK](./imgs/fk.png)
 
 ## **Constraints**
 
@@ -91,4 +91,4 @@ In this project, we implemented 3 types of constraint:
 3. Domain Integrity Constraint:
 > Domain Integrity ensures that the purpose of a column is clear and the values of a column are consistent as well as valid. The existence of data types, length, date format, check and null constraints make sure this integrity is satisfied.
 
-![Constraints](/imgs/constraints.png)
+![Constraints](./imgs/constraints.png)
